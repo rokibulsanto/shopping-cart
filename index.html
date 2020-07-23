@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="caseMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="caseUpdateValue" type="text" class="form-control text-center" value="1">
+                           <button id="casePlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="casePrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -79,7 +79,7 @@
    </section>
 
    <script>
-      // plus button even handaler
+      // plus button even handaler for iPhone11
 
       const plusButton = document.getElementById("plusButton");
       plusButton.addEventListener("click",function(){
@@ -128,6 +128,61 @@
           }
           
       })
+
+      // case-black iphone plus button
+
+      const casePlus= document.getElementById("casePlus");
+      casePlus.addEventListener("click",function(){
+         
+         //updating input field
+         const caseUpdateValue = document.getElementById("caseUpdateValue").value;
+         const caseUpdateValueNumber = parseInt(caseUpdateValue);
+         const newCasevalue = caseUpdateValueNumber + 1;
+         document.getElementById("caseUpdateValue").value = newCasevalue;
+
+         //updating case price field
+         
+         const casePrice = document.getElementById("casePrice").innerText;
+         const casePriceNumber = parseInt(casePrice);
+         const price = 59;
+         const updatePrice = newCasevalue * price;
+         document.getElementById("casePrice").innerText = updatePrice;
+
+      })
+
+      //case black iphone minus button 
+
+      const caseMinus = document.getElementById("caseMinus");
+      caseMinus.addEventListener("click",function(){
+         
+         //decreasing input field
+         const caseMinusValue = document.getElementById("caseUpdateValue").value;
+         const caseMinusValueNumber = parseInt(caseMinusValue);
+
+         if(caseMinusValueNumber>0){
+
+            const decreaseNumber = caseMinusValueNumber -1;
+            document.getElementById("caseUpdateValue").value = decreaseNumber;
+
+         }
+
+         //decreasing price field
+
+         const decreaseCasePrice = document.getElementById("casePrice").innerText;
+         const decreaseCasePriceNumber = parseInt(decreaseCasePrice);
+
+         const price = 59;
+         const decreaseNumber = caseMinusValueNumber -1;
+         if(decreaseNumber>=0){
+
+            const total = decreaseNumber * price;
+            document.getElementById("casePrice").innerText = total;
+
+         }
+
+      })
+
+
 
 
    </script>
