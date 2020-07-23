@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5>$<span id="subTotal">1,278 </span> </h5>
                         <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$<span id="Total">1,278 </span></h5>
                      </div>
                   </div>
                </div>
@@ -92,10 +92,26 @@
          //updating price field
          const updatePrice = document.getElementById("price").innerText;
          const updatePriceNumber = parseInt(updatePrice);
-         const price = 1219;
-         const total = newNumber * price;
+         const price1 = 1219;
+         const total = newNumber * price1;
          document.getElementById("price").innerText = total;
          
+         //updating subtotal field
+         
+         const subTotal = document.getElementById("subTotal").innerText;
+         const subTotalNumber = parseInt(subTotal);
+         const price2 =1219;
+         const updateSubTotal = newNumber * price2 ;
+         document.getElementById("subTotal").innerText = updateSubTotal;
+
+         //updating total field
+
+         const Total = document.getElementById("Total").innerText;
+         const TotalNumber = parseInt(Total);
+         const price3 =1219;
+         const updateTotal = newNumber * price3;
+         document.getElementById("Total").innerText = updateTotal;
+
 
       })
 
@@ -126,6 +142,33 @@
             document.getElementById("price").innerText = total;
 
           }
+
+          //decreasing subtotal field
+
+          const decreaseSubTotal = document.getElementById("subTotal").innerText;
+          const decreaseSubTotalNumber = parseInt(decreaseSubTotal);
+          const price3 = 1219;
+          const newDecrease2 = decreaseValueNumber -1;
+          if(newDecrease2>=0){
+
+            const subTotal = newDecrease2 * price3;
+            document.getElementById("subTotal").innerText = subTotal;
+
+          }
+
+          //decreasing total field
+
+          const decreaseTotal = document.getElementById("Total").innerText;
+          const decreaseTotalNumber = parseInt(decreaseTotal);
+          const price4 = 1219;
+          const newDecrease3 = decreaseValueNumber -1;
+          if(newDecrease3>=0){
+
+            const Total = newDecrease3 * price4;
+            document.getElementById("Total").innerText = Total;
+
+          }
+
           
       })
 
@@ -147,6 +190,15 @@
          const price = 59;
          const updatePrice = newCasevalue * price;
          document.getElementById("casePrice").innerText = updatePrice;
+
+         //updating subtotal field
+
+         const subTotal2 = document.getElementById("subTotal").innerText;
+         
+        
+         
+        
+
 
       })
 
